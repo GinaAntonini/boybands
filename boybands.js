@@ -1,35 +1,35 @@
-console.log("Is anybody out there!")
+console.log("hello world")
 
 // Loop through the two arrays provided (bands and vegetables) and output each element in the arrays into their corresponding HTML <div> element. 
 // Ensure that each item is in a block element (e.g. li, div, p. etc...)
 
+//The first thing to do is set the loop count to 5. 
+//Next, we need to 
 
 var bands = ["Boyz II Men", "NSync", "New Kids on the Block", "98 Degrees", "One Direction"];
 var vegetables = ["Carrots", "Kale", "Zucchini", "Broccoli", "Squash"];
-
-// The number of loops to perform (what if the array changes?)
 var loopCount = 5;
 
-// Keep track of which band we're on in the loop
-var currentBand = "";
+var bandElement = document.getElementById("boy-bands"); //this identifies where in the html the band is going to go and defining a variable for it
+var veggieElement = document.getElementById("vegetables"); //this identifies where in the html the vegetable is going to go and defining a variable for it//
 
-// Keep track of which veggie we're on in the loop
-var currentVeggie = "";
+for (var i = 0; i < loopCount; i++) { //first define i (initializer), next define how many times the loop will run, 
+	//then define how many times it should increase, then i++ is the same as i = i + 1
 
-// Get a reference to the appropriate DOM element for bands
-var bandElement = document.getElementById('boy-bands');
+	var domStringBand = ""; //gives a place for the band to be added into 
+	var currentBand = bands[i]; 
 
-// Get a reference to the appropriate DOM element for vegetables
-var veggieElement = document.getElementById('vegetables');
+  domStringBand += currentBand; //building the domString
+  bandElement.innerHTML += '<li>' + domStringBand + '</li>'; //placed into div with innerHTML
 
-// Start looping
-for (var loopTracker = 0; loopTracker < loopCount; loopTracker += 1) {
-  
-  // Add the band names into the correct <div>
-  currentBand = '<div id="boy-bands">';
+  var domStringVegetable = "";
+  var currentVegetable = vegetables[i];
 
-  
-  // Add the veggie names into the correct <div>
-  currentVeggie = '<div id="vegetables">';
+  domStringVegetable += currentVegetable;
+  veggieElement.innerHTML += '<li>' + domStringVegetable + '</li>';
 
 }
+
+
+
+
